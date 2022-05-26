@@ -1,0 +1,21 @@
+.container {
+  max-width: 900px;
+  margin: auto;
+  position: relative;
+  padding: 0 10px;
+}
+
+.app {
+  &__title {
+    color: rgb(236, 236, 236);
+    text-transform: uppercase;
+    padding: 45px 0 0 30px;
+    font-size: 38px;
+    webkit-touch-callout: none;
+    -webkit-user-select: none; 
+     -khtml-user-select: none; 
+       -moz-user-select: none; 
+        -ms-user-select: none; 
+            user-select: none; 
+  }
+}

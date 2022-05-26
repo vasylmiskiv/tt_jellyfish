@@ -1,0 +1,26 @@
+  <mat-icon 
+    [ngClass]="isFormOpen ? 
+    'create-todo__btn create-todo__btn-close' : 
+    'create-todo__btn create-todo__btn-open'"
+    (click)="toggleForm()"
+  >
+    {{addButtonStatus}}
+  </mat-icon>
+
+<form *ngIf="isFormOpen" class="create-todo">
+    <input
+      class="create-todo__input"
+      type="text" 
+      [formControl]="title"
+      placeholder="Add a new task"
+    >
+  <button 
+    class="create-todo__submit"
+    (click)="addTodoItem($event)"
+  >
+    Add a new task
+  </button>
+</form>
+  
+
+  

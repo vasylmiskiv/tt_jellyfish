@@ -1,0 +1,34 @@
+$antiquewhite-color: rgb(250, 235, 215);
+
+@mixin noselect {
+  webkit-touch-callout: none;
+  -webkit-user-select: none; 
+   -khtml-user-select: none; 
+     -moz-user-select: none; 
+      -ms-user-select: none; 
+          user-select: none; 
+}
+
+.todos-info {
+  margin-top: 45px;
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid $antiquewhite-color;
+  @include noselect();
+  
+  font-size: 20px;
+  color: $antiquewhite-color;
+
+  &__amount-span {
+    color: rgb(59, 129, 170)
+  }
+
+  &__complete-span {
+    color: rgb(79, 158, 109)
+  }
+
+  &__uncomplete-span {
+    color: rgb(175, 73, 73)
+  }
+}

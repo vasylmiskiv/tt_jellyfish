@@ -1,0 +1,63 @@
+.create-todo {
+  max-width: 600px;
+  margin: auto;
+  padding-top: 45px;
+
+  &__input {
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    font-size: 22px;
+    border-radius: 5px;
+    background-color: rgb(209, 209, 209);
+    transition: 0.2s ease-out;
+    width: 100%;
+
+    &:focus {
+      background-color: #fff;
+    }
+  }
+
+  &__submit {
+    margin-top: 40px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    background-color: rgb(168, 204, 168);
+    transition: 0.2s ease-out;
+    font-size: 20px;
+
+    &:hover {
+      background-color: rgb(123, 194, 123);
+    }
+  }
+  
+  &__btn {
+    position: absolute;
+    font-size: 63px;
+    top: 35px;
+    right: 80px;
+    cursor: pointer;
+    transition: 0.3s ease-out;
+  
+    &-close {
+      color:rgba(238, 99, 99, 0.705);
+  
+      &:hover {
+        color:rgb(238, 99, 99);
+      }
+    }
+  
+    &-open {
+      color: rgba(85, 209, 178, 0.514);
+  
+      &:hover {
+        color: rgba(27, 219, 171, 0.767);
+      }
+    }
+  }
+}
+
+

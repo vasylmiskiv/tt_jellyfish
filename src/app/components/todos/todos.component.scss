@@ -1,0 +1,12 @@
+.todos {
+  &__title {
+    text-align: center;
+    color: #fff;
+  }
+
+  &__empty-title {
+    margin-top: 100px;
+    text-align: center;
+    color: #fff;
+  }
+}

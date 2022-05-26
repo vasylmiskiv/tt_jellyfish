@@ -1,0 +1,18 @@
+<app-todos-createtodo (newTask)="addNewTask($event)"></app-todos-createtodo>
+<div ngclass="todos">
+  
+  <app-todos-todosinfo [todos]="todos"></app-todos-todosinfo>
+
+  <h2 *ngIf="!todos.length" class="todos__empty-title">
+    Todo list is empty
+  </h2>
+
+  <app-todos-todo
+    (idToDelete)="deleteTodoById($event)"
+    *ngFor="let todo of todos"
+    [todo]="todo"
+  ></app-todos-todo>
+
+</div>
+  
+

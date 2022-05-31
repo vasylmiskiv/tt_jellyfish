@@ -12,6 +12,7 @@ import { TodosinfoComponent } from './components/todosinfo/todosinfo.component';
 import { FormsModule }   from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { FooterComponent } from './components/footer/footer.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,6 +20,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     CreatetodoComponent,
     TodoComponent,
     TodosinfoComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

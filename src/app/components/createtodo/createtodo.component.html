@@ -1,13 +1,10 @@
 <mat-icon 
-  [ngClass]="isFormOpen ? 
-  'create-todo__btn create-todo__btn-close' : 
-  'create-todo__btn create-todo__btn-open'"
+  [ngClass]="calculateClassesForToggleForm()"
   (click)="toggleForm()"
 >
   {{addButtonStatus}}
 </mat-icon>
 
-<!-- we could also add a onSubmit action and change button type button to submit -->
 <form 
   *ngIf="isFormOpen" 
   class="create-todo" 
@@ -22,7 +19,7 @@
   >
   <button
     type="submit"
-    class="create-todo__submit"
+    [ngClass]="calculateClassesForSubmit()"
     (click)="onAddTodoItem($event)"
   >
     Add a new task

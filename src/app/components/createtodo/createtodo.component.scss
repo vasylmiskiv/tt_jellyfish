@@ -25,12 +25,22 @@
     border: none;
     cursor: pointer;
     width: 100%;
-    background-color: rgb(168, 204, 168);
     transition: 0.2s ease-out;
     font-size: 20px;
 
-    &:hover {
-      background-color: rgb(123, 194, 123);
+    &-enabled {
+      background-color: rgb(118, 185, 156);
+
+      &:hover {
+        background-color: rgb(116, 218, 175);
+      }
+    }
+
+    &-disabled {
+      background-color: rgb(189, 170, 170);
+      pointer-events: none;
+      opacity: 0.7;
+      color: #2b2a2a;
     }
   }
   

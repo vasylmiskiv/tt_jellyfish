@@ -9,9 +9,9 @@ import { Todo } from '../../models/Todo';
   styleUrls: ['./createtodo.component.scss']
 })
 export class CreatetodoComponent implements OnInit {
-  // form binding
+  // form binding reactive forms
   newTaskForm = new FormGroup({
-    "title": new FormControl()
+    "title": new FormControl('')
   });
   createdTask!: Todo;
   currentlyAddedTodoId!: number;
@@ -26,6 +26,29 @@ export class CreatetodoComponent implements OnInit {
   constructor(private todosService: TodosService) { }
 
   ngOnInit(): void {}
+
+  // toggle classes for form toggler
+  // there are different ways to calculate classes
+  calculateClassesForToggleForm() {
+    return this.isFormOpen ?
+     {'create-todo__btn': true, 'create-todo__btn-close': true} :
+     {'create-todo__btn': true, 'create-todo__btn-open': true};
+  }
+
+  // toggle classes for submit button
+  calculateClassesForSubmit() {
+    if(this.newTaskForm.controls['title'].value.length === 0) {
+      return {
+        'create-todo__submit': true,
+        'create-todo__submit-disabled': true,
+      }
+    } else {
+      return {
+        'create-todo__submit': true,
+        'create-todo__submit-enabled': true,
+      }
+    }
+  }
 
   // toggle form and change add task button
   toggleForm() {

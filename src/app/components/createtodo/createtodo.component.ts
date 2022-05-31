@@ -1,5 +1,5 @@
 import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
-import { FormControl } from '@angular/forms';
+import { FormControl, FormGroup } from '@angular/forms';
 import { TodosService } from 'src/app/services/todos.service';
 import { Todo } from '../../models/Todo';
 
@@ -10,7 +10,9 @@ import { Todo } from '../../models/Todo';
 })
 export class CreatetodoComponent implements OnInit {
   // form binding
-  title = new FormControl('');
+  newTaskForm = new FormGroup({
+    "title": new FormControl()
+  });
   createdTask!: Todo;
   currentlyAddedTodoId!: number;
 
@@ -34,7 +36,7 @@ export class CreatetodoComponent implements OnInit {
 
   // lifting new task
   addTodo (createdTask: Todo) {
-    this.newTask.emit(createdTask)
+    this.newTask.emit(createdTask);
   }
 
   // add todo item
@@ -42,7 +44,7 @@ export class CreatetodoComponent implements OnInit {
     e.preventDefault();
     // create id to our new task
     this.currentlyAddedTodoId = Date.now();
-    const newTitle: string = this.title.value;
+    const newTitle: string = this.newTaskForm.controls['title'].value;
     // create new todo according to interface
     const newTodo = {
       userId: this.userId,
@@ -56,13 +58,13 @@ export class CreatetodoComponent implements OnInit {
     .subscribe((data: Todo) => {
       // server returns object as a response
       // server returns 201 and changes our id to 201
-      this.createdTask = data
+      this.createdTask = data;
       // and change valid id to a new task 
       this.createdTask.id = this.currentlyAddedTodoId;
       // start emit result
-      this.addTodo(this.createdTask)
+      this.addTodo(this.createdTask);
       // clear input
-      this.title.setValue('')
+      this.newTaskForm.controls['title'].setValue('');
     })
   }
 }

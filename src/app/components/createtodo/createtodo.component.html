@@ -8,15 +8,20 @@
 </mat-icon>
 
 <!-- we could also add a onSubmit action and change button type button to submit -->
-<form *ngIf="isFormOpen" class="create-todo">
-    <input
-      class="create-todo__input"
-      type="text" 
-      [formControl]="title"
-      placeholder="Add a new task"
-    >
+<form 
+  *ngIf="isFormOpen" 
+  class="create-todo" 
+  [formGroup]="newTaskForm"
+  (ngSubmit) ="onAddTodoItem($event)"
+>
+  <input
+    class="create-todo__input"
+    type="text" 
+    formControlName="title"
+    placeholder="Add a new task"
+  >
   <button
-    type="button"
+    type="submit"
     class="create-todo__submit"
     (click)="onAddTodoItem($event)"
   >

@@ -37,6 +37,6 @@ export class TodoComponent implements OnInit {
   }
 
   onToggleCurrentTodo(id: number) {
-    this.toggleById.emit(id)
+    this.toggleById.emit(id);
   }
 }

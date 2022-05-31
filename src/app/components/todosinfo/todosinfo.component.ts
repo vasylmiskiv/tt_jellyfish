@@ -24,7 +24,7 @@ export class TodosinfoComponent implements OnInit {
     return completeAmount;
   }
 
-  // tasks uncoplete
+  // tasks uncomplete
   tasksUncomplete() {
     return this.todosAmount() - this.tasksComplete();
   }

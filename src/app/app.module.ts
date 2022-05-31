@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { TodoComponent } from './components/todo/todo.component';
 import { MatIconModule } from '@angular/material/icon'
 import { TodosinfoComponent } from './components/todosinfo/todosinfo.component';
+import { FormsModule }   from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 @NgModule({
@@ -24,8 +25,9 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     AppRoutingModule,
     HttpClientModule,
     MatIconModule,
+    FormsModule,
     MatFormFieldModule,
-    ReactiveFormsModule, 
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

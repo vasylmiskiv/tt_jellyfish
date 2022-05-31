@@ -38,12 +38,12 @@ export class TodosComponent implements OnInit {
 
   // add a new todo item
   addNewTask(createdTask: Todo) {
-    this.todos = [createdTask, ...this.todos]
+    this.todos = [createdTask, ...this.todos];
   }
 
   // toggle complete / uncomplete by current id
   toggleCurrentTodo(id: number) {
-    const currentTodo = this.todos.find(todo => todo.id === id)
+    const currentTodo = this.todos.find(todo => todo.id === id);
     currentTodo!.completed = currentTodo!.completed ? false : true;
   }
 }

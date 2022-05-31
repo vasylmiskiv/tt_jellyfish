@@ -9,12 +9,19 @@ import { TodosService } from '../../services/todos.service';
 })
 export class TodosComponent implements OnInit {
   todos: Todo[] = [];
+  userId!:number;
 
   constructor(private todosSerivce: TodosService) { }
 
   // start get todos
   ngOnInit(): void {
+    this.newUserId();
     this.showTodos();
+  }
+
+  // generate a new userId
+  newUserId() {
+    this.userId = new Date().getUTCMilliseconds();
   }
 
   // init getting todos
@@ -32,5 +39,11 @@ export class TodosComponent implements OnInit {
   // add a new todo item
   addNewTask(createdTask: Todo) {
     this.todos = [createdTask, ...this.todos]
+  }
+
+  // toggle complete / uncomplete by current id
+  toggleCurrentTodo(id: number) {
+    const currentTodo = this.todos.find(todo => todo.id === id)
+    currentTodo!.completed = currentTodo!.completed ? false : true;
   }
 }

@@ -11,11 +11,18 @@ import { TodosService } from '../../services/todos.service';
 export class TodoComponent implements OnInit {
   //get todo item
   @Input() todo!: Todo;
+  // emit data
   @Output() idToDelete = new EventEmitter();
+  @Output() toggleById = new EventEmitter();
 
   constructor(private todosService: TodosService) { }
 
   ngOnInit(): void {}
+
+  // delete current todo from array
+  deleteById(id:number) {
+    this.idToDelete.emit(id);
+  }
 
   onDelete(id:number) {
     // fake delete from the server
@@ -29,8 +36,7 @@ export class TodoComponent implements OnInit {
       })
   }
 
-  // delete current todo from array
-  deleteById(id:number) {
-    this.idToDelete.emit(id);
+  onToggleCurrentTodo(id: number) {
+    this.toggleById.emit(id)
   }
 }

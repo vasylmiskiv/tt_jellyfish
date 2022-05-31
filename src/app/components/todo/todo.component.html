@@ -2,6 +2,7 @@
   [className]="todo.completed ?
   'todo todo__done' :
   'todo todo__undone'"
+  (dblclick)="onToggleCurrentTodo(todo.id)"
 >
   <div class="todo__title">
     {{todo.title}}
@@ -9,5 +10,4 @@
   <button class="todo__delete" (click)="onDelete(todo.id)">
     <mat-icon class="todo__delete-icon">clear icon</mat-icon>
   </button>
-  
 </div>

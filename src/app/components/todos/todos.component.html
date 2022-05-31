@@ -1,4 +1,4 @@
-<app-todos-createtodo (newTask)="addNewTask($event)"></app-todos-createtodo>
+<app-todos-createtodo (newTask)="addNewTask($event)" [userId]="userId"></app-todos-createtodo>
 <div ngclass="todos">
   
   <app-todos-todosinfo [todos]="todos"></app-todos-todosinfo>
@@ -11,6 +11,7 @@
     (idToDelete)="deleteTodoById($event)"
     *ngFor="let todo of todos"
     [todo]="todo"
+    (toggleById)="toggleCurrentTodo($event)"
   ></app-todos-todo>
 
 </div>
